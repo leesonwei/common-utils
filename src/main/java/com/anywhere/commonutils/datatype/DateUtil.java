@@ -33,6 +33,13 @@ public class DateUtil {
     
     public static String DATE_FORMAT_CHINESE = "yyyy年M月d日";
     
+    public static String getCurrentTime(String format) {
+        String datestr = null;
+        SimpleDateFormat df = new SimpleDateFormat(format);
+        datestr = df.format(new Date());
+        return datestr;
+    }
+    
     /**
      * @param args
      */

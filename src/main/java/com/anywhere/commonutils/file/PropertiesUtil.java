@@ -1,6 +1,6 @@
 package com.anywhere.commonutils.file;
 
-import org.apache.commons.lang3.StringUtils;
+import com.anywhere.commonutils.datatype.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,7 +42,7 @@ public class PropertiesUtil {
 
     public String getProperty(String key){
         String value = props.getProperty(key.trim());
-        if(StringUtils.isBlank(value)){
+        if(StringUtil.isBlank(value)){
             return null;
         }
         return value.trim();
@@ -51,7 +51,7 @@ public class PropertiesUtil {
     public String getProperty(String key,String defaultValue){
 
         String value = props.getProperty(key.trim());
-        if(StringUtils.isBlank(value)){
+        if(StringUtil.isBlank(value)){
             value = defaultValue;
         }
         return value.trim();
