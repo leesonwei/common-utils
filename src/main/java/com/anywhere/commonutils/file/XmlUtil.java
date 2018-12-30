@@ -10,6 +10,7 @@
  */
 package com.anywhere.commonutils.file;
 
+import com.anywhere.commonutils.sensitiveword.PreconditionUtil;
 import org.w3c.dom.*;
 
 import javax.xml.parsers.DocumentBuilder;

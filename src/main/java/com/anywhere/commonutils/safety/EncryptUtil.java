@@ -9,6 +9,7 @@
  * 作者姓名           修改时间           版本号              描述
  */
 package com.anywhere.commonutils.safety;
+import com.anywhere.commonutils.datatype.StringUtil;
 import org.apache.commons.codec.binary.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
@@ -58,6 +59,11 @@ public class EncryptUtil {
             }
             return self;
         }
+
+    public static void main(String[] args) {
+        String en = EncryptUtil.getInstance().Base64Encode("123456 春天");
+        System.out.println(en);
+    }
         
         /**
          * 使用MessageDigest进行单向加密（无密码）
