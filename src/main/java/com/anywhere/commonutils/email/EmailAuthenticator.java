@@ -35,6 +35,7 @@ public class EmailAuthenticator extends Authenticator {
         this.password = pwd;
     }
     
+    @Override
     public PasswordAuthentication getPasswordAuthentication() {
         return new PasswordAuthentication(username, password);
     }

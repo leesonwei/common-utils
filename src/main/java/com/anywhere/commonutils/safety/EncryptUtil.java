@@ -9,10 +9,8 @@
  * 作者姓名           修改时间           版本号              描述
  */
 package com.anywhere.commonutils.safety;
-
-import com.sun.org.apache.xml.internal.security.exceptions.Base64DecodingException;
-import com.sun.org.apache.xml.internal.security.utils.Base64;
-
+import com.anywhere.commonutils.datatype.StringUtil;
+import org.apache.commons.codec.binary.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.Mac;
@@ -61,6 +59,11 @@ public class EncryptUtil {
             }
             return self;
         }
+
+    public static void main(String[] args) {
+        String en = EncryptUtil.getInstance().Base64Encode("123456 春天");
+        System.out.println(en);
+    }
         
         /**
          * 使用MessageDigest进行单向加密（无密码）
@@ -145,7 +148,7 @@ public class EncryptUtil {
         }
         
         private String base64(byte[] res){
-            return Base64.encode(res);
+            return new String(Base64.encodeBase64(res));
         }
         
         /**将二进制转换成16进制 */
@@ -296,7 +299,7 @@ public class EncryptUtil {
          * @return
          */
         public String Base64Encode(String res) {
-            return Base64.encode(res.getBytes());
+            return new String(Base64.encodeBase64(res.getBytes()));
         }
         public String Base64Encode(byte[] res) {
             return Base64.encode(res);
@@ -309,11 +312,7 @@ public class EncryptUtil {
          */
         public String Base64Decode(String res) {
             String result = "";
-            try {
-                result =  new String(Base64.decode(res));
-            } catch (Base64DecodingException e) {
-                e.printStackTrace();
-            }
+            result =  new String(Base64.decodeBase64(res.getBytes()));
             return result;
         }
         
