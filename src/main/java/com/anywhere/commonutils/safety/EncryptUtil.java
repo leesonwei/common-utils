@@ -302,7 +302,7 @@ public class EncryptUtil {
             return new String(Base64.encodeBase64(res.getBytes()));
         }
         public String Base64Encode(byte[] res) {
-            return Base64.encode(res);
+            return Base64.encodeBase64String(res);
         }
         
         /**
