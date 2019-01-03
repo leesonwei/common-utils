@@ -298,6 +298,9 @@ public class EncryptUtil {
         public String Base64Encode(String res) {
             return Base64.encode(res.getBytes());
         }
+        public String Base64Encode(byte[] res) {
+            return Base64.encode(res);
+        }
         
         /**
          * 使用Base64进行解密
@@ -313,5 +316,6 @@ public class EncryptUtil {
             }
             return result;
         }
+        
     
 }
